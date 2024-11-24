@@ -1,4 +1,4 @@
-import { fetchSinglePlayer } from "../API/index.js"
+import { deletePlayer, fetchSinglePlayer } from "../API/index.js"
 import { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 
@@ -29,16 +29,24 @@ export default function SinglePlayer({ puppyId }){
     }, []);
     return(
         <>
-        <div onClick={(e) => navigation('/')}>
-            pupps 
+        <h2 className="PlayerHead">Single Player Info</h2>
+        <div className="info" onClick={(e) => navigation('/')}>
+           
             {
                  puppy && (
-                    <div>
+                    <div className="playerWord">
                       <div>Name: {puppy.name}</div>
                       <div>Breed: {puppy.breed}</div>
                       <img style={styles.image} src={puppy.imageUrl} alt={puppy.name} />
                       <div>Team: {puppy.team}</div>
-                      <div></div>
+                      <button onClick={(e) => navigation('/')}>Back to Home</button>
+                      <br />
+                      <button onClick={(e) => {deletePlayer(puppyId)
+                        navigation('/')
+                    }} >    
+                            Delete Player
+                        </button>
+                      
                     </div>
                   )
             }

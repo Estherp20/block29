@@ -54,7 +54,11 @@ export default function AddPlayer() {
             
             <form className="addPlayer" onSubmit={handleSubmit}><br />
                
-                <div><div><h3>Add New Player</h3></div>
+                <div id="AddNewPlayer">
+                    <div>
+                        <h3 id="newPlayer">Add New Player</h3>
+                    </div>
+
                     <label>
                         Name:
                         <input

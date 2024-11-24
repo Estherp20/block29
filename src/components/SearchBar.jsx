@@ -23,7 +23,7 @@ export default function SearchBar({ players }) {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form className="searchBar" onSubmit={handleSubmit}>
         <label>
           Find Puppy{" "}
           <input
